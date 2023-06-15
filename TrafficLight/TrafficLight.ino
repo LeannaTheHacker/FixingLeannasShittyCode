@@ -54,6 +54,7 @@ void loop() {
     // -> Turn off LED3, LED9 (Green Lights)
     // -> Turn on LED2, LED8 (Yellow Ligths)
     if(7 <= intervalCounter && intervalCounter <= 8) {
+        isPedestrianButtonClicked = false;
         digitalWrite(LED3, LOW);
         digitalWrite(LED9, LOW);
         digitalWrite(LED10, LOW);
@@ -88,8 +89,13 @@ void loop() {
     if(19 <= intervalCounter && intervalCounter <= 21) {
         digitalWrite(LED6, LOW);
         digitalWrite(LED5, HIGH);
-    }    
+    }
 
+    // Reset Loop
+    if(intervalCounter > 21) {
+        intervalCounter = 0;
+    }
+    
     // I
     intervalCounter = intervalCounter + 1;
     delay(intervalDelay);
