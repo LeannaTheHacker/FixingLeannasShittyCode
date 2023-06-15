@@ -96,7 +96,7 @@ void loop() {
         intervalCounter = 0;
     }
     
-    // I
+    // Interval counter
     intervalCounter = intervalCounter + 1;
     delay(intervalDelay);
 }
